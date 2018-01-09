@@ -42,14 +42,17 @@ numu2014=np.load('2014numu.npy')
 xxu2014=np.load('2014xxu.npy')
 yyu2014=np.load('2014yyu.npy')
 
-fig,axes=plt.subplots(4,2,figsize=(14,14.5))
+rows=4
+cols=2
+fig,axes=plt.subplots(rows,cols,figsize=(14,10.5))
 plt.subplots_adjust(wspace=0.2,hspace=0.2)
-
+xlim0=(-21,100)
+xlim1=(-60,10)
+ylim=(-200,460)
 axes[0,0].scatter(windu2012,numu2012)
 axes[0,1].scatter(windv2012,numv2012)
 axes[1,0].scatter(windu2013,numu2013)
 axes[1,1].scatter(windv2013,numv2013)
-
 
 axes[0,0].plot(xxu2012,yyu2012)
 axes[0,1].plot(xxv2012,yyv2012)
@@ -58,67 +61,66 @@ axes[1,1].plot(xxv2013,yyv2013)
 
 axes[2,0].scatter(windu2014,numu2014)
 axes[2,1].scatter(windv2014,numv2014)
-'''
-axes[,0].scatter(windu2013,numu2013)
-axes[1,1].scatter(windv2013,numv2013)
-'''
+
 
 axes[2,0].plot(xxu2014,yyu2014)
 axes[2,1].plot(xxv2014,yyv2014)
-'''
-axes[1,0].plot(xxu2013,yyu2013)
-axes[1,1].plot(xxv2013,yyv2013)
-'''
-
-axes[0,0].text(0,175,'2012',fontsize=15)
-axes[0,1].text(-10,150,'2012',fontsize=15)
-axes[1,0].text(0,80,'2013',fontsize=15)
-axes[1,1].text(-10,50,'2013',fontsize=15)
-
-axes[2,0].text(0,700,'2014',fontsize=15)
-axes[2,1].text(-10,150,'2014',fontsize=15)
-
-axes[3,0].text(-10,375,'mean(2012-2014)',fontsize=15)
-axes[3,1].text(-20,150,'mean(2012-2014)',fontsize=15)
-
-axes[0,0].text(0,100,'r^2=%s'%str(np.corrcoef(windu2012,numu2012)[0][1]))
-axes[0,1].text(-40,50,'r^2=%s'%str(np.corrcoef(windv2012,numv2012)[0][1]))
-axes[1,0].text(20,80,'r^2=%s'%str(np.corrcoef(windu2013,numu2013)[0][1]))
-axes[1,1].text(-40,50,'r^2=%s'%str(np.corrcoef(windv2013,numv2013)[0][1]))
-
-axes[2,0].text(20,80,'r^2=%s'%str(np.corrcoef(windu2014,numu2014)[0][1]))
-axes[2,1].text(-40,50,'r^2=%s'%str(np.corrcoef(windv2014,numv2014)[0][1]))
-
-'''
-axes[0,0].set_xlabel('(a) sum of eastward wind stress per 3 days (pa)')
-axes[0,1].set_xlabel('(b) sum of northward wind stress per 3 days (pa)')
-axes[1,0].set_xlabel('(c) sum of eastward wind stress per 3 days (pa)')
-axes[1,1].set_xlabel('(d) sum of northward wind stress per 3 days (pa)')
-
-axes[2,0].set_xlabel('(e) sum of eastward wind stress per 3 days (pa)')
-axes[2,1].set_xlabel('(f) sum of northward wind stress per 3 days (pa)')
-'''
-
-axes[0,0].set_ylabel('the number of strandings (per 3 days)')
-#axes[0,1].set_ylabel('the number of strandings (per 3 days)')
-axes[1,0].set_ylabel('the number of strandings (per 3 days)')
-#axes[1,1].set_ylabel('the number of strandings (per 3 days)')
-
-axes[2,0].set_ylabel('the number of strandings (per 3 days)')
-axes[3,0].set_ylabel('the number of strandings (per 3 days)')
 
 
-axes[0,0].set_title('Eastward wind stress vs strandings on Outer Cape towns')
-axes[0,1].set_title('Northward wind stress vs strandings on Mid Cape towns')
-'''
-axes[1,0].set_title('2013 eastward wind stress vs strandings on Outer Cape towns')
-axes[1,1].set_title('2013 northward wind stress vs strandings on Upper Cape towns')
+axes[0,0].text(60,300,'2012',fontsize=15)
+axes[0,1].text(-20,300,'2012',fontsize=15)
+axes[1,0].text(60,300,'2013',fontsize=15)
+axes[1,1].text(-20,300,'2013',fontsize=15)
 
-axes[2,0].set_title('2014 eastward wind stress vs strandings on Outer Cape towns')
-axes[2,1].set_title('2014 northward wind stress vs strandings on Upper Cape towns')
-'''
-#plt.xlabel('windstrss(pa)')
-#plt.ylabel('number( per day)')
+axes[2,0].text(60,300,'2014',fontsize=15)
+axes[2,1].text(-20,300,'2014',fontsize=15)
+
+axes[3,0].text(50,300,'mean(2012-2014)',fontsize=15)
+axes[3,1].text(-20,300,'mean(2012-2014)',fontsize=15)
+
+axes[0,0].text(60,200,'r$^2$=%s'%str(np.round(np.corrcoef(windu2012,numu2012)[0][1],2)),fontsize=13)
+axes[0,1].text(-20,200,'r$^2$=%s'%str(np.round(np.corrcoef(windv2012,numv2012)[0][1],2)),fontsize=13)
+axes[1,0].text(60,200,'r$^2$=%s'%str(np.round(np.corrcoef(windu2013,numu2013)[0][1],2)),fontsize=13)
+axes[1,1].text(-20,200,'r$^2$=%s'%str(np.round(np.corrcoef(windv2013,numv2013)[0][1],2)),fontsize=13)
+
+axes[2,0].text(60,200,'r$^2$=%s'%str(np.round(np.corrcoef(windu2014,numu2014)[0][1],2)),fontsize=13)
+axes[2,1].text(-20,200,'r$^2$=%s'%str(np.round(np.corrcoef(windv2014,numv2014)[0][1],2)),fontsize=13)
+axes[0,0].set_xlim(xlim0)
+axes[1,0].set_xlim(xlim0)
+axes[2,0].set_xlim(xlim0)
+axes[3,0].set_xlim(xlim0)
+axes[0,1].set_xlim(xlim1)
+axes[1,1].set_xlim(xlim1)
+axes[2,1].set_xlim(xlim1)
+axes[3,1].set_xlim(xlim1)
+
+axes[0,0].get_xaxis().set_visible(False)
+axes[0,1].get_xaxis().set_visible(False)
+axes[1,0].get_xaxis().set_visible(False)
+axes[1,1].get_xaxis().set_visible(False)
+axes[2,0].get_xaxis().set_visible(False)
+axes[2,1].get_xaxis().set_visible(False)
+axes[0,1].get_yaxis().set_visible(False)
+axes[1,1].get_yaxis().set_visible(False)
+axes[2,1].get_yaxis().set_visible(False)
+axes[3,1].get_yaxis().set_visible(False)
+
+axes[0,0].set_ylim(ylim)
+axes[0,1].set_ylim(ylim)
+axes[1,0].set_ylim(ylim)
+axes[1,1].set_ylim(ylim)
+axes[2,0].set_ylim(ylim)
+axes[2,1].set_ylim(ylim)
+axes[3,0].set_ylim(ylim)
+axes[3,1].set_ylim(ylim)
+
+#axes[0,0].set_ylabel('the number of strandings (per 3 days)')
+axes[1,0].set_ylabel('the number of strandings (per 3 days)',fontsize=14)
+#axes[2,0].set_ylabel('the number of strandings (per 3 days)')
+#axes[3,0].set_ylabel('the number of strandings (per 3 days)')
+
+axes[0,0].set_title('Eastward wind stress vs strandings on Outer Cape towns',fontsize=14)
+axes[0,1].set_title('Northward wind stress vs strandings on Mid Cape towns',fontsize=14)
 
 wu=[]
 wv=[]
@@ -168,27 +170,18 @@ xx1=np.linspace(-50,5,100)
 yy1=[]
 for a in np.arange(len(xx)):
     yy1.append(xx1[a]*p1[1]+p1[0])
-'''
-plt.figure()
-plt.scatter(wv,nv)  
-'''
-'''
-fig,axes=plt.subplots(1,2,figsize=(18,5))
-plt.subplots_adjust(wspace=0.2,hspace=0.4)
-'''
+
 axes[3,0].scatter(wu,nu)  
 axes[3,1].scatter(wv,nv) 
 axes[3,0].plot(xx,yy)
 axes[3,1].plot(xx1,yy1)
-axes[3,0].text(0,200,'r^2=%s'%str(np.corrcoef(wu,nu)[0][1]))
-axes[3,1].text(-40,50,'r^2=%s'%str(np.corrcoef(wv,nv)[0][1]))
+axes[3,0].text(60,200,'r$^2$=%s'%str(np.round(np.corrcoef(wu,nu)[0][1],2)),fontsize=13)
+axes[3,1].text(-10,200,'r$^2$=%s'%str(np.round(np.corrcoef(wv,nv)[0][1],2)),fontsize=13)
 
-axes[3,0].set_xlabel('sum of eastward wind stress per 3 days (pa)')
-axes[3,1].set_xlabel('sum of northward wind stress per 3 days (pa)')
-'''
-axes[3,0].set_title('mean eastward wind stress vs strandings on Outer Cape towns(2012-2014) ')
-axes[3,1].set_title('mean northward wind stress vs strandings on Upper Cape towns(2012-2014)')
-'''
+axes[3,0].set_xlabel('sum of eastward wind stress per 3 days (pa)',fontsize=13)
+axes[3,1].set_xlabel('sum of northward wind stress per 3 days (pa)',fontsize=13)
+
+plt.subplots_adjust(wspace=0.1,hspace=0.1)
 plt.savefig('corrxxmx',dpi=300)
 
     
