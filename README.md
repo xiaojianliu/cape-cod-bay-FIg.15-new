@@ -1,4 +1,4 @@
-# 'run 2012ux.py','run 2012v.py','run 2013ux.py','run 2013vx.py','run 2014ux.py','run 2014vx.py'
+# run '2012ux.py','2012v.py','2013ux.py','2013vx.py','2014ux.py','2014vx.py'
 
 # Take 2012 as an example：
 # '2012ux.np' creates files ( '2012windu.npy'/'2012numu.npy'/'2012xxu.npy'/'2012yyu.npy').
