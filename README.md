@@ -1,9 +1,20 @@
-# backtrack turtle 
+# run'2014vx.np' creates files ( '2014windv.npy'/'2014numv.npy'/'2014xxv.npy'/'2014yyv.npy').
 
-# '2012ux.np' creates files ( '2012windu.npy'/'2012numu.npy'/'2012xxu.npy'/'2012yyu.npy').
- After the temperature below 10 degC, I calculate the number of strandings every 3 days and save as '2012numu.npy'( stranding in 'Outer Cape' towns) and '2012numv.npy'( stranding in 'Mid Cape' towns), and I also calculate the sum of wind stress every 3 days (the time is consistent with the stranding time ) save as '2012windu.npy' (wind stress in the east-west direction) and '2012windv.npy'  (wind stress in the south-north direction).
-   Next I calculate their correlation coefficient and perform a linear fit. "2012xxu.npy"（in the east-west direction） and '2012xxv.npy'（in the south-north direction） save the fitted x-axis data. "2012yyu.npy"（in the east-west direction） and '2012yyv.npy'（in the south-north direction） save the fitted y-axis data.
- 
- Other years file are same to 2012
- 
-# 'pltx.np' draw a picture about linear fit.
+# sur_t=np.load('surf_time.npy')
+Time of the FVCOM(GOM3) ocean model (from November 1, 2014 to December 31, 2014)
+
+# sur_tem=np.load('surf_temp.npy')
+Ocean surface temperature corresponding to the time of the 'surf_time.npy' file
+
+# w_t=np.load('wind_time.npy')
+Time of the FVCOM(GOM3) ocean model (from November 1, 2014 to December 31, 2014)
+
+# w_v=np.load('wind_v.npy')
+Ocean surface wind stress corresponding to the time of the 'wind_time.npy' file
+
+
+# turt_t_n=np.load('tuttle_time_num.npy')
+Sea turtle's stranding time in 2014 (in the v direction)
+
+# tuttle_time_v=np.load('tuttle_time_v.npy')
+The number of turtles stranded corresponding to the stranding time (in the v direction)
