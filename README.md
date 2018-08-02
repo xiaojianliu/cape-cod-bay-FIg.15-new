@@ -13,8 +13,9 @@ Time of the FVCOM(GOM3) ocean model (from November 1, 2012 to December 31, 2012)
 # w_v=np.load('wind_v.npy')
 Ocean surface wind stress corresponding to the time of the 'wind_time_v.npy' file
 
-# tuttle_time_v=np.load('tuttle_time_v.npy')
-Sea turtle's stranding time in 2012 (in the v direction)
 
 # turt_t_n=np.load('tuttle_time_num_v.npy')
+Sea turtle's stranding time in 2012 (in the v direction)
+
+# tuttle_time_v=np.load('tuttle_time_v.npy')
 The number of turtles stranded corresponding to the stranding time (in the v direction)
