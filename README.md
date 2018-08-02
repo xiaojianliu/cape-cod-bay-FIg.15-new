@@ -4,13 +4,13 @@
 Time of the FVCOM(GOM3) ocean model (from November 1, 2012 to December 31, 2012)
 
 # sur_tem=np.load('surf_temp.npy')
-Ocean surface temperature of the FVCOM (GOM3) ocean model (from November 1, 2012 to December 31, 2012)
+Ocean surface temperature corresponding to the time of the 'surf_time.npy' file
 
 # w_t=np.load('wind_time.npy')
 Time of the FVCOM(GOM3) ocean model (from November 1, 2012 to December 31, 2012)
 
 # w_u=np.load('wind_u.npy')
-Ocean surface windstress of the FVCOM (GOM3) ocean model (from November 1, 2012 to December 31, 2012)
+Ocean surface wind pressure corresponding to the time of the 'wind_time.npy' file
 
 # turt_t_n=np.load('tuttle_time_num.npy')
 Sea turtle's stranding time (in the u direction)
