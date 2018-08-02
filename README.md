@@ -1,1 +1,1 @@
-# 'pltxxx.np' draw a picture about linear fit.
+# 'pltxxxx.np' draw a picture about linear fit.
